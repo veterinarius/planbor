@@ -1,0 +1,43 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"poppins",sans-serif;
+}
+body{
+    flex:auto;
+}
+.container{
+    background:#fff;
+    width:450px;
+    padding:1.5rem;
+    margin:50px auto;
+    border-radius:10px;
+    box-shadow:0 20px 35px rgba(0,0,1,0.9);
+}
+form{
+    margin:0 2rem;
+}
+.teaser_headline{
+    color: green;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-left: 18px;
+}
+.teaser{
+    color: black;
+    padding-left: 18px;
+}
+.article{
+    color: black;
+    padding-left: 15px;
+    padding-right: 10px;
+}
+.article_headline{
+    color: gray;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-left: 15px;
+    padding-top: 15px;
+}

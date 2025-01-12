@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="../icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <title>Anleitung Homescreen</title>
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css//newsstyle.css">
+    <link rel="manifest" href="./manifest.json">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<style>
+    #check:checked ~ ul {
+        left: 0;
+    }
+</style>
+
+<body>
+    <nav class="bg-gradient-to-r from-green-600 to-green-200 h-20 w-full sticky top-0 z-50">
+        <input type="checkbox" id="check" hidden>
+        <label for="check" class="float-right text-white text-3xl leading-[80px] mr-10 lg:hidden">
+            <ion-icon name="menu" onclick="Menu(this)"></ion-icon> </label>
+            <a href="../news.html" class="cursor-pointer text-white leading-[80px] pl-12 md:pl-2 md:text-4-xl text-3xl">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </a>
+        <ul class="float-right mr-10 lg:flex leading-[80px] space-x-4 text-white uppercase rounded fixed lg:relative h-[100vh] lg:h-0 w-[100%] lg:w-fit top-20 lg:top-0 left-[-100%] lg:left-0 transition-all duration-300 lg:transition-none text-center bg-gradient-to-r from-green-600 to-green-200">
+        <li>
+            <a href="../account.html" class="text-xl hover:text-green-500 transition-all duration-500">Account</a>
+        </li>
+        <li>
+            <a href="../news.html" class="text-xl hover:text-green-500 transition-all duration-500">Nachrichten</a>         
+        </li>
+        <!--<li>
+            <a href="../discord.html" class="text-xl hover:text-green-500 transition-all duration-500">Discord</a>
+        </li>-->
+        <li>
+            <a href="../impressum.html" class="text-xl hover:text-green-500 transition-all duration-500">Impressum</a>         
+        </li>
+        <li>
+            <a href="../datenschutz.html" class="text-xl hover:text-green-500 transition-all duration-500">Datenschutz</a>         
+        </li>
+    </ul>
+</nav>
+
+<script>
+    function Menu(e){
+        let list = document.querySelector('ul');
+
+        e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) : (e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+    }
+</script>
+
+        <section class="group md:flex items-center justify-center max-h-full p-10">
+            <section class="input_info w-68 flex flex-col space-y-10">
+                
+                <div>
+                <p class="article_headline">Website-Symbol zum Home-/Start-Bildschirm hinzufügen</span>
+                </p>
+            </div>
+
+            <div>
+                <p class="article_headline">Website zum iPhone Homescreen hinzufügen</span>
+                </p>
+            </div>
+            <br>
+
+            <div class="article">
+            <p>Du kannst ein Symbol einer Website zum Home-Bildschirm deines iPhone hinzufügen, um schnell auf sie zugreifen zu können.</p>
+            <br>
+            <p>Gebe in Safari "https://planbor.de" ein.</p>
+            <br>
+            <p>Tippt unten auf den Teilen-Button, das ist das kleine Viereck mit dem nach oben zeigenden Pfeil.</p>
+            <br>
+            <p>Jetzt zieht das sich öffnende Teilen-Menü ein Stück nach oben. Wählt nun die Option „Zum Home-Bildschirm“.</p> 
+            <br>
+            <p>In der Ansicht jetzt habt ihr die Möglichkeit, den Titel des App-Icons zu ändern. Standardmäßig wird der im Quellcode der Website hinterlegte Titel verwendet. Zu lange Bezeichnungen werden durch Punkte abgekürzt. Daher wählt z.B PlanBOR.</p>
+            <br>
+            <p>Als App-Symbol wird automatisch ein Logo der Seite verwendet. Im Gegensatz zum Titel könnt ihr das Logo nicht verändern.</p>
+        </div>
+
+        <div>
+            <p class="article_headline">Webseite als Shortcut auf dem Home-Screen – So geht's bei Android</span>
+            </p>
+        </div>
+        <br>
+
+        <div class="article">
+            <p>Öffnet eine Browser-App wie Google Chrome.</p>
+            <br>
+            <p>Gebe z.B. in Chrome "https://planbor.de" ein.</p>
+            <br>
+            <p>Tippe auf die drei Punkte rechts oben.</p>
+            <br>
+            <p>Wähle die Option Zum Startbildschirm hinzufügen.</p> 
+        </div>    
+
+                     <footer class="fixed bottom-0 left-0 z-20 w-full p-4 font-bold bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">&copy; 2025 - S.W.       
+                </footer>
+            </section>
+        </section>
+        <section class="bg-cover h-[10vh]">
+        </section>
+        <script src="./js/app.js"></script>
+           
+</body>
+</html>
