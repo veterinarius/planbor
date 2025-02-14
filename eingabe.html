@@ -60,7 +60,7 @@
     <img class="drop-shadow-lg mt-6 mx-auto" src="logo.png" alt="">
     <h1 class="mx-3 text-red-700 font-bold text-lg text-center mt-7 mb-5">Bitte dein Anliegen bis spätestens Donnerstag Abend mitteilen!</h1>
 
- <span class="text-black font-bold text-lg flex justify-center items-center m-7" id="datetime"></span>
+ <span class="text-black font-bold text-lg flex justify-center items-center m-10 mb-5" id="datetime"></span>
 
 <script>
   // create a function to update the date and time
@@ -77,6 +77,35 @@
 
   // call the `updateDateTime` function every second
   setInterval(updateDateTime, 1000);
+</script>
+
+<div class="text-black font-bold text-lg flex justify-center items-center pl-12 mt-7 mb-5">
+    <input type="text" name="KW" id="currentKW" placeholder="KW" readonly required>
+</div>  
+
+<script>
+// Funktion zur Berechnung der Kalenderwoche
+function getWeekNumber() {
+    const currentDate = new Date();
+    const startDate = new Date(currentDate.getFullYear(), 0, 1);
+    const days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
+    
+    const weekNumber = Math.ceil((days + startDate.getDay() + 1) / 7);
+    
+    return weekNumber;
+}
+
+// Funktion zur Formatierung der Kalenderwoche (z.B. "KW 01" statt nur "1")
+function formatWeekNumber(weekNum) {
+    return `aktuelle KW: ${weekNum.toString().padStart(2, '0')}`;
+}
+
+// Kalenderwoche beim Laden der Seite setzen
+document.addEventListener('DOMContentLoaded', () => {
+    const kwInput = document.getElementById('currentKW');
+    const weekNumber = getWeekNumber();
+    kwInput.value = formatWeekNumber(weekNumber);
+});
 </script>
 
     <div class="flex justify-center items-center">

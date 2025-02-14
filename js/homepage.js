@@ -64,7 +64,7 @@ const firebaseConfig = {
 const deleteButton = document.getElementById("deleteUser");
 
 // Handle delete user
-deleteButton.addEventListener("click", async () => {
+deleteButton?.addEventListener("click", async () => {
     var question = confirm("Bist du sicher?")
 
     if (question) {
