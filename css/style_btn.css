@@ -1,0 +1,55 @@
+:root {
+    --primary-color: #22c55e;    /* Grün statt Blau */
+    --secondary-color: #16a34a;  /* Dunkleres Grün für Hover */
+    --third-color:  #af080d;     /* Rot für Logout*/
+    --fourth-color:  #2563eb;    /* Blau für Logout Hover*/
+    --background-color: #f8fafc;
+    --text-color: #1e293b;
+    --error-color: #ef4444;
+    --success-color: #22c55e;
+    --border-color: #e2e8f0;
+    --input-bg: #ffffff;
+    --shadow-color: rgb(148 163 184 / 0.1);
+  }
+
+  .btn {
+    padding: 0.875rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px 0 var(--shadow-color),
+                0 1px 2px -1px var(--shadow-color);
+  }
+
+  .btnlogout {
+    padding: 0.875rem;
+    background: var(--third-color);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px 0 var(--shadow-color),
+                0 1px 2px -1px var(--shadow-color);
+  }
+
+  .btnlogout:hover {
+    background: var(--fourth-color);
+    transform: translateY(-1px);
+  }
+
+  .btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-1px);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+  }

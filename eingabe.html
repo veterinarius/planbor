@@ -10,9 +10,12 @@
     <link rel="shortcut icon" type="image/png" href="logo.png">
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="./css/Google Sheet.css">
+    <link rel="stylesheet" href="./css/style_eingabe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <style>
@@ -40,6 +43,9 @@
             <a href="discord.html" class="text-xl hover:text-green-500 transition-all duration-500">Discord</a>
         </li>-->
         <li>
+            <a href="download.html" class="text-xl hover:text-green-500 transition-all duration-500">Downloads</a>
+        </li>
+        <li>
             <a href="impressum.html" class="text-xl hover:text-green-500 transition-all duration-500">Impressum</a>
         </li>
         <li>
@@ -56,11 +62,49 @@
     }
 </script>
 
-    <form method="post" action="" name="google-sheet">
-    <img class="drop-shadow-lg mt-6 mx-auto" src="logo.png" alt="">
-    <h1 class="mx-3 text-red-700 font-bold text-lg text-center mt-7 mb-5">Bitte dein Anliegen bis spätestens Donnerstag Abend mitteilen!</h1>
+    <form method="post" action="" name="google-sheet" class="form-container">
+    <img class="drop-shadow-xl mt-6 mx-auto w-32 h-auto" src="logo.png" alt="">
+    <h1 class="text-red-600 font-semibold text-xl text-center mt-8 mb-6">
+        Bitte dein Anliegen bis spätestens Donnerstag Abend mitteilen!
+    </h1>
 
- <span class="text-black font-bold text-lg flex justify-center items-center m-10 mb-5" id="datetime"></span>
+    <!-- Datum und KW -->
+    <div class="mb-8">
+        <span class="text-gray-700 font-medium text-lg block text-center mb-4" id="datetime"></span>
+        <span class="block text-center">
+            <input type="text" name="currentKW" id="currentKW" class="input-modern max-w-xs text-center" readonly>
+        </span>
+    </div>
+
+    <!-- Name und KW Eingabe -->
+    <div class="space-y-4 mb-8">
+        <input type="text" Name="Name" placeholder="Name" class="input-modern" required>
+        <input type="text" name="KW" placeholder="KW" class="input-modern" required>
+    </div>
+
+    <!-- Wochentage -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <input type="text" name="Montag" placeholder="Montag" class="input-modern">
+        <input type="text" name="Dienstag" placeholder="Dienstag" class="input-modern">
+        <input type="text" name="Mittwoch" placeholder="Mittwoch" class="input-modern">
+        <input type="text" name="Donnerstag" placeholder="Donnerstag" class="input-modern">
+        <input type="text" name="Freitag" placeholder="Freitag" class="input-modern">
+        <input type="text" name="Samstag" placeholder="Samstag" class="input-modern">
+    </div>
+
+    <!-- Bemerkungen -->
+    <div class="mb-8">
+        <textarea name="remark" rows="5" placeholder="Bemerkungen" 
+                  class="input-modern min-h-[120px] resize-y"></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+        <button type="submit" id="submit" class="btn-modern w-full md:w-2/3 lg:w-1/2">
+            Eingabe weiterleiten
+        </button>
+    </div>
+</form>
 
 <script>
   // create a function to update the date and time
@@ -78,10 +122,6 @@
   // call the `updateDateTime` function every second
   setInterval(updateDateTime, 1000);
 </script>
-
-<div class="text-black font-bold text-lg flex justify-center items-center pl-12 mt-7 mb-5">
-    <input type="text" name="KW" id="currentKW" placeholder="KW" readonly required>
-</div>  
 
 <script>
 // Funktion zur Berechnung der Kalenderwoche
@@ -108,41 +148,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-    <div class="flex justify-center items-center">
-    <input type="text" Name="Name" placeholder="Name" class="m-2 bg-white bg-opacity-25 placeholder-gray-400 font-bold p-4 text-black border border-gray-300 rounded-md w-10/12" required>
-</div>
-</br>
-    <div class="flex justify-center items-center">
-    <input type="text" name="KW" placeholder="KW" class="m-2 bg-white bg-opacity-25 placeholder-gray-400 font-bold p-4 text-black border border-gray-300 rounded-md w-2/5" required>
-</div>    
-</br>
-    <div class="flex justify-center items-center">
-    <input type="text" name="Montag" placeholder="Montag" class="m-2 bg-white bg-opacity-25 placeholder-gray-400 font-bold p-4 text-black border border-gray-300 rounded-md w-2/5">
-    <input type="text" name="Dienstag" placeholder="Dienstag" class="m-2 bg-white bg-opacity-25 placeholder-gray-400 font-bold p-4 text-black border border-gray-300 rounded-md w-2/5">
-</div>    
-</br>
-    <div class="flex justify-center items-center">
-    <input type="text" name="Mittwoch" placeholder="Mittwoch" class="m-2 bg-white bg-opacity-25 placeholder-gray-400 font-bold p-4 text-black border border-gray-300 rounded-md w-2/5">
-    <input type="text" name="Donnerstag" placeholder="Donnerstag" class="m-2 bg-white bg-opacity-25 placeholder-gray-400 font-bold p-4 text-black border border-gray-300 rounded-md w-2/5">
-</div>    
-</br>
-    <div class="flex justify-center items-center">
-    <input type="text" name="Freitag" placeholder="Freitag" class="m-2 bg-white bg-opacity-25 placeholder-gray-400 font-bold p-4 text-black border border-gray-300 rounded-md w-2/5">
-    <input type="text" name="Samstag" placeholder="Samstag" class="m-2 bg-white bg-opacity-25 placeholder-gray-400 font-bold p-4 text-black border border-gray-300 rounded-md w-2/5">
-</div>
-</br>
-    <div class="flex justify-center items-center">
-        <textarea name="remark" id="" cols="" rows="5" placeholder="Bemerkungen" class="m-2 bg-white bg-opacity-25 placeholder-gray-400 font-bold p-4 text-black border border-gray-300 rounded-md w-10/12"></textarea>
-    </div>
-        <div class="flex justify-center items-center">
-        <!--<input class="cursor-pointer" type="submit" value="Eingabe weiterleiten" id="submit">-->
-        <button type="submit" id="submit" class="m-4 w-[60%] bg-[#008A34] text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Eingabe weiterleiten</button>
-        </div>
-        <footer class="fixed bottom-0 left-0 z-20 w-full p-4 font-bold bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">&copy; 2025 - S.W.</footer>
-   
+<footer class="fixed bottom-0 left-0 z-20 w-full p-4 font-bold bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">&copy; 2025 - S.W.
+          
+            <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        </footer>
+
     <section class="bg-cover h-[10vh] bg-white">
     </section>
-</form>
 
 <script src="js/Google Sheets.js"></script>
 <script src="/js/app.js"></script>

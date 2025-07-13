@@ -14,6 +14,3 @@ signInButton.addEventListener('click', function(){
     signInForm.style.display="block";
     signUpForm.style.display="none";
 })
-/*deleteAccountButton.addEventListener('click', function(){
-    deleteAccountForm.style.display="block";
-})*/

@@ -6,27 +6,29 @@
     <!-- ios support -->
     <link rel="apple-touch-icon" href="../icons/icon-96x96.png">
     <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
-    <title>Wochenplan</title>
-    <link rel="shortcut icon" type="image/png" href="logo.png">
-    <link rel="manifest" href="manifest.json">
+    <title>Download Seite</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/app/css/newsstyle.css">
+    <link rel="manifest" href="/manifest.json">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script type="module" src="./js/firebaseauth.js"></script>
+    </head><script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script type="module" src="./js//homepage.js"></script>
 </head>
 
-  <!--<head>
-    <base target="_top">
-  </head>-->
-
-  <style>
+<style>
     #check:checked ~ ul {
         left: 0;
     }
 </style>
 
-<body class="flex-initial justify-center items-center h-screen"></body>
+    <style>
+        .pdf-card:hover {
+            transform: translateY(-2px);
+            transition: all 0.2s;
+        }
+    </style>
+
+<body class="bg-gray-100">
     <nav class="bg-gradient-to-r from-green-600 to-green-200 h-20 w-full sticky top-0 z-50">
         <input type="checkbox" id="check" hidden>
         <label for="check" class="float-right text-white text-3xl leading-[80px] mr-10 lg:hidden">
@@ -45,13 +47,13 @@
             <a href="discord.html" class="text-xl hover:text-green-500 transition-all duration-500">Discord</a>
         </li>-->
         <li>
-            <a href="download.html" class="text-xl hover:text-green-500 transition-all duration-500">Downloads</a>
+            <a href="download.html" class="text-xl hover:text-green-500 transition-all duration-500">Downloads</a>         
         </li>
         <li>
             <a href="impressum.html" class="text-xl hover:text-green-500 transition-all duration-500">Impressum</a>         
         </li>
         <li>
-            <a href="datenschutz.html" class="text-xl hover:text-green-500 transition-all duration-500">Datenschutz</a>
+            <a href="datenschutz.html" class="text-xl hover:text-green-500 transition-all duration-500">Datenschutz</a>         
         </li>
     </ul>
 </nav>
@@ -63,13 +65,26 @@
         e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) : (e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
     }
 </script>
-<div class="pt-5 pb-5">
-<span class="text-gray-500 font-bold text-2xl ml-5">Wochenplan</span>
-</div>
-<div class="ml-5">
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrAujmnqMqSz33qjXAEwjC55TSkxdyHNbxCg9NHtoFfUPXDUUMIYCsIubnxP9gkxLciwu3wNbLoLSu/pubhtml?gid=805378274&amp;single=true&amp;widget=true&amp;headers=false" width="80%" height="500px"></iframe>
-</div>
-<script src="/js/app.js"></script>
+
+<section>
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-8 text-center">Dokumente</h1>
+        
+        <!-- Suchleiste -->
+        <div class="mb-8">
+            <input type="text" 
+                   id="searchInput" 
+                   placeholder="Dokumente durchsuchen..." 
+                   class="w-full p-4 rounded-lg border shadow-sm">
+        </div>
+
+        <!-- PDF Liste -->
+        <div id="pdfList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- PDFs werden hier dynamisch eingefügt -->
+        </div>
+    </div>
+</section>
+    <script src="download.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>
-

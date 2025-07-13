@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="../icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <title>Schweinehaltende Betriebe 2024</title>
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/newsstyle.css">
+    <link rel="manifest" href="./manifest.json">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<style>
+    #check:checked ~ ul {
+        left: 0;
+    }
+</style>
+
+<body>
+    <nav class="bg-gradient-to-r from-green-600 to-green-200 h-20 w-full sticky top-0 z-50">
+        <input type="checkbox" id="check" hidden>
+        <label for="check" class="float-right text-white text-3xl leading-[80px] mr-10 lg:hidden">
+            <ion-icon name="menu" onclick="Menu(this)"></ion-icon> </label>
+            <a href="../news.html" class="cursor-pointer text-white leading-[80px] pl-12 md:pl-2 md:text-4-xl text-3xl">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </a>
+        <ul class="float-right mr-10 lg:flex leading-[80px] space-x-4 text-white uppercase rounded fixed lg:relative h-[100vh] lg:h-0 w-[100%] lg:w-fit top-20 lg:top-0 left-[-100%] lg:left-0 transition-all duration-300 lg:transition-none text-center bg-gradient-to-r from-green-600 to-green-200">
+        <li>
+            <a href="../account.html" class="text-xl hover:text-green-500 transition-all duration-500">Account</a>
+        </li>
+        <li>
+            <a href="../news.html" class="text-xl hover:text-green-500 transition-all duration-500">Nachrichten</a>         
+        </li>
+       <!--<li>
+            <a href="../discord.html" class="text-xl hover:text-green-500 transition-all duration-500">Discord</a>
+        </li>-->
+        <li>
+            <a href="../download.html" class="text-xl hover:text-green-500 transition-all duration-500">Downloads</a>         
+        </li>
+        <li>
+            <a href="../impressum.html" class="text-xl hover:text-green-500 transition-all duration-500">Impressum</a>         
+        </li>
+        <li>
+            <a href="../datenschutz.html" class="text-xl hover:text-green-500 transition-all duration-500">Datenschutz</a>         
+        </li>
+    </ul>
+</nav>
+
+<script>
+    function Menu(e){
+        let list = document.querySelector('ul');
+
+        e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) : (e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+    }
+</script>
+
+        <section class="group md:flex items-center justify-center max-h-full p-10">
+            <section class="input_info w-68 flex flex-col space-y-10">
+                <!--<img class="drop-shadow-lg mt-10 mx-auto" src="/app/logo.png" alt="Logo">-->
+                
+                <div>
+                <p class="article_headline">Zahl der schweinehaltenden Betriebe sinkt weiter: -3,4% im November 2024 gegenüber dem Vorjahr</span>
+                </p>
+            </div>
+
+            <div class="article">
+            <p class="text-black font-semibold text-lg">- Zahl schweinehaltender Betriebe innerhalb eines Jahres um 3,4 % oder 600 Betriebe gesunken, im Zehnjahresvergleich um 41,7 % oder 11 200 Betriebe</p>
+            <br>
+            <p class="text-black font-semibold text-lg">- Schweinebestand im Vergleich zum Vorjahr nahezu konstant, im Zehnjahresvergleich um 25,2 % niedriger</p>
+            <br>
+            <p class="text-black font-semibold text-lg">- Trend zu größeren Betrieben hält an: Im November 2024 hielt ein Betrieb im Schnitt 1 400 Schweine, zehn Jahre zuvor waren es 1 100 Tiere pro Betrieb</p>
+            <br>
+            <br>
+            <p>WIESBADEN – Zum Stichtag 3. November 2024 gab es in Deutschland 15 600 schweinehaltende Betriebe. Wie das Statistische Bundesamt (Destatis) nach vorläufigen Ergebnissen der Viehbestandserhebung mitteilt, nahm die Zahl der Betriebe damit im Vergleich zum 3. Mai 2024 um 1,0 % (-200 Betriebe)
+                 und im Vergleich zum 3. November 2023 um 3,4 % (-600 Betriebe) ab. Im Zehnjahresvergleich wird die rückläufige Tendenz bei der Zahl der schweinehaltenden Betriebe noch deutlicher: Seit 2014 ging die Zahl der Betriebe um 41,7 % (-11 200 Betriebe) zurück.</p>
+            <br>
+            <p class="text-black font-semibold text-lg">300 Schweine mehr als vor zehn Jahren</p>
+            <br>
+            <p>Die Zahl der in Deutschland gehaltenen Schweine lag zum Stichtag 3. November 2024 bei 21,2 Millionen Tieren. Damit blieb der Bestand sowohl im Vergleich zum Stichtag 3. Mai 2024 (+10 100 Tiere) als auch gegenüber dem Vorjahreszeitpunkt (-0,2 % oder -39 400 Tiere) nahezu unverändert. 
+                Verglichen mit 2014 ging der Schweinebestand allerdings um 25,2 % oder 7,2 Millionen Tiere zurück. Da die Zahl der Betriebe in dem Zeitraum deutlich stärker gesunken ist, hält die Entwicklung hin zu größeren Betrieben weiter an: Während im Jahr 2014 ein Betrieb durchschnittlich 1 100 Schweine hielt, waren es zehn Jahre später 1 400 Tiere pro Betrieb.</p>
+            <br>
+            <p>Für die einzelnen Kategorien der Schweinehaltung ergibt sich folgendes Bild: Zum Stichtag 3. November 2024 wurden in Deutschland mit 9,7 Millionen Mastschweinen 3,0 % oder 282 900 Tiere mehr gehalten als ein halbes Jahr zuvor. Die Zahl der Ferkel und der Jungschweine hingegen verringerte sich um 2,5 % oder 254 700 Tiere und lag bei 10,0 Millionen. 
+                Die Zahl der Zuchtsauen ging mit 1,4 Millionen gehaltenen Tieren gegenüber Mai 2024 um 1,3 % (-18 100 Tiere) zurück.</p>
+            <br>
+            <br>
+            <p class="text-black font-semibold text-lg">Rinder- und Milchkuhbestand verringert sich weiter</p>
+            <br>
+            <p>Die Zahl der in Deutschland gehaltenen Rinder ging zuletzt zurück. Zum Stichtag 3. November 2024 hielten die Betriebe in Deutschland 10,5 Millionen Rinder, darunter 3,6 Millionen Milchkühe. Das waren 1,6 % oder 165 500 Rinder und 2,1 % oder 78 900 Milchkühe weniger als am 3. Mai 2024. Gegenüber November 2023 sank der Rinderbestand um 3,5 % 
+                (-374 900 Tiere) und gegenüber 2014 um 17,9 % (-2,3 Millionen Tiere). Der Milchkuhbestand reduzierte sich innerhalb eines Jahres um 3,3 % (-123 400 Tiere) und im Zehnjahresvergleich um 16,4 % (-706 200 Tiere).</p>
+            <br>
+            <p>Auch bei den Haltungen mit Milchkühen setzte sich der langjährige rückläufige Trend fort. Gegenüber Mai 2024 sank die Zahl der Haltungen um 1,6 % (-800 Haltungen) auf 48 600, gegenüber November 2023 ging sie um 3,8 % (-1 900 Haltungen) zurück. Das waren 36,4 % (-27 800 Haltungen) weniger Milchkuh-Haltungen als noch im Jahr 2014.</p>
+            <br>
+            <br>
+            <p class="text-black font-semibold text-lg">Schafbestand ebenfalls rückläufig</p>
+            <br>
+            <p>Zum 3. November 2024 hielten deutsche Betriebe insgesamt 1,5 Millionen Schafe und damit 3,4 % oder 53 200 Tiere weniger als ein Jahr zuvor (3. November 2023). Im Zehnjahresvergleich nahm der Bestand um 5,9 % oder 94 300 Tiere ab.</p>
+            <br>
+            <p>(Quelle: Destatis)</p>
+        </div>
+                
+
+                     <footer class="fixed bottom-0 left-0 z-20 w-full p-4 font-bold bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">&copy; 2025 - S.W.       
+                </footer>
+            </section>
+        </section>
+        <section class="bg-cover h-[10vh]">
+        </section>
+        
+        <script src="../js/app.js"></script>
+</body>
+</html>

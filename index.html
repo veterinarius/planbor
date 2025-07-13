@@ -6,7 +6,7 @@
     <meta name="keywords" content="Dienstplan, Wochenplan, Mitarbeiter, Urlaub, Arbeitszeiten">
     <meta name="author" content="S.W.">
     <link rel="shortcut icon" type="image/png" href="logo.png">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style_neu.css">
     <script type="text/javascript" src="/js/materialize.min.js"></script>
     <link rel="manifest" href="/manifest.json">
     <!-- ios support -->
@@ -24,24 +24,48 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: black;
-            font-family: Arial, sans-serif;
+            color: #1e293b;
+            font-family: 'Inter', sans-serif;
             overflow: hidden;
+            background: linear-gradient(to right, #f8fafc, #e2e8f0);
         }
 
         #splash {
             opacity: 0;
             animation: fadeIn 2s forwards, fadeOut 1s 3s forwards;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        #splash h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #22c55e;
+        }
+
+        #splash p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #64748b;
+        }
+
+        .logo {
+            width: auto;
+            height: 120px;
+            margin: 0 auto;
+            display: block;
+            filter: drop-shadow(0 4px 6px rgb(0 0 0 / 0.1));
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(-20px); }
         }
     </style>
 
