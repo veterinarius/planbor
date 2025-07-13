@@ -42,12 +42,12 @@ body {
 
 .input-group {
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .input-group input {
   width: 100%;
-  padding: 0.875rem 1rem;
+  padding: 0.875rem 0.8rem;
   border: 1px solid var(--border-color);
   border-radius: 0.75rem;
   font-size: 1rem;
@@ -66,7 +66,7 @@ body {
 
 .input-group label {
   position: absolute;
-  left: 0.75rem;
+  left: 0.70rem;
   top: 0.875rem;
   font-size: 1rem;
   color: #64748b;
@@ -159,4 +159,21 @@ footer{
     font-size: 1.5rem;
     margin-bottom: 2rem;
   }
+}
+
+/* z.B. in style.css oder im <style> Bereich deiner HTML */
+#toast {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #22c55e;
+    color: white;
+    padding: 1.5rem 2.5rem;
+    border-radius: 1.2rem;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    z-index: 9999;
+    text-align: center;
 }

@@ -15,7 +15,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- ios support -->
     <link rel="apple-touch-icon" href="../icons/icon-96x96.png">
-    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <!--<meta name="apple-mobile-web-app-status-bar" content="#aa7700">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login & Register</title>
     <script type="module" src="./js/firebaseauth.js"></script>
@@ -25,6 +25,7 @@
       <h1 class="form-title">Registrieren</h1>
       <form method="POST" action="">
         <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+
         <div class="input-group">
            <i class="fas fa-user"></i>
            <input type="text"  id="fName" placeholder="First Name" required>
@@ -48,7 +49,7 @@
        <button class="btn" id="submitSignUp" >Registrieren</button>
       </form>
       <div class="input-group">
-        <p>Du hast breits einen Account?</p>
+        <p>Du hast bereits einen Account?</p>
         <button id="signInButton">Anmelden</button>
       </div>
       <footer class="footer">&copy; 2025 - S.W.</footer>

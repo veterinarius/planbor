@@ -1,3 +1,6 @@
+import { initializeApp } from 'firebase/app';
+import { getMessaging, onMessage } from 'firebase/messaging';
+
 // Firebase Konfiguration
 const firebaseConfig = {
     apiKey: "AIzaSyBNLlDNNGN5LN2CvOPsmuPyX2KEkThf-4Q",
@@ -11,10 +14,8 @@ const firebaseConfig = {
   };
 
 // Firebase initialisieren
-firebase.initializeApp(firebaseConfig);
-
-// Messaging als globale Variable definieren
-const messaging = firebase.messaging();
+const app = initializeApp(firebaseConfig);
+const messaging = getMessaging(app);
 
 // Debugging-Hilfsfunktionen
 async function checkPrerequisites() {
@@ -84,7 +85,7 @@ async function requestPermission() {
 }
 
 // Nachrichtenempfang im Vordergrund
-messaging.onMessage((payload) => {
+onMessage(messaging, (payload) => {
     console.log('Nachricht empfangen:', payload);
 });
 

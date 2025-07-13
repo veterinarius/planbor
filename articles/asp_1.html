@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="../icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <title>ASP 14.06.25</title>
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/newsstyle.css">
+    <link rel="manifest" href="./manifest.json">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<style>
+    #check:checked ~ ul {
+        left: 0;
+    }
+</style>
+
+<body>
+    <nav class="bg-gradient-to-r from-green-600 to-green-200 h-20 w-full sticky top-0 z-50">
+        <input type="checkbox" id="check" hidden>
+        <label for="check" class="float-right text-white text-3xl leading-[80px] mr-10 lg:hidden">
+            <ion-icon name="menu" onclick="Menu(this)"></ion-icon> </label>
+            <a href="../news.html" class="cursor-pointer text-white leading-[80px] pl-12 md:pl-2 md:text-4-xl text-3xl">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </a>
+        <ul class="float-right mr-10 lg:flex leading-[80px] space-x-4 text-white uppercase rounded fixed lg:relative h-[100vh] lg:h-0 w-[100%] lg:w-fit top-20 lg:top-0 left-[-100%] lg:left-0 transition-all duration-300 lg:transition-none text-center bg-gradient-to-r from-green-600 to-green-200">
+        <li>
+            <a href="../account.html" class="text-xl hover:text-green-500 transition-all duration-500">Account</a>
+        </li>
+        <li>
+            <a href="../news.html" class="text-xl hover:text-green-500 transition-all duration-500">Nachrichten</a>         
+        </li>
+        <li>
+            <a href="../download.html" class="text-xl hover:text-green-500 transition-all duration-500">Downloads</a>         
+        </li>
+        <li>
+            <a href="../impressum.html" class="text-xl hover:text-green-500 transition-all duration-500">Impressum</a>         
+        </li>
+        <li>
+            <a href="../datenschutz.html" class="text-xl hover:text-green-500 transition-all duration-500">Datenschutz</a>         
+        </li>
+    </ul>
+</nav>
+
+<script>
+    function Menu(e){
+        let list = document.querySelector('ul');
+
+        e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) : (e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+    }
+</script>
+
+        <section class="group md:flex items-center justify-center max-h-full p-10">
+            <section class="input_info w-68 flex flex-col space-y-10">
+                
+                <div>
+                <p class="article_headline">Feststellung der Afrikanischen Schweinepest (ASP) bei einem Wildschwein im Kreis Olpe</span>
+                </p>
+            </div>
+
+            <div class="article">
+            <p class="text-black font-semibold text-lg">Das Ministerium für Landwirtschaft und Verbraucherschutz teilt mit:</p>
+            <br>
+            <p>Im Kreis Olpe bei der Gemeinde Kirchhundem ist erstmals in Nordrhein-Westfalen ein Wildschwein positiv auf die Afrikanische Schweinepest (ASP) getestet worden. 
+                Ein entsprechender Nachweis des Chemischen und Veterinäruntersuchungsamtes Westfalen an dem Wildschwein wurde am Samstag, 14. Juni 2025, vom Friedrich-Loeffler-Institut (FLI), dem Bundesforschungsinstitut für Tiergesundheit, bestätigt. Das Tier war von einem Jagdausübungsberechtigten in einem Waldstück bei Kirchhundem verendet aufgefunden worden.</p>
+            <br>
+            <p>Ministerin Silke Gorißen: „Oberstes Ziel ist es, eine Ausbreitung des lokalen Falls der ASP im Wildschweinebestand zu verhindern. Zum Schutz vor einer möglichen Ausbreitung der ASP in der Region laufen bereits notwendige Maßnahmen, die schon zum Zeitpunkt des gemeldeten Verdachtsfalls eingeleitet wurden. 
+                Ich appelliere an unsere Landwirtinnen und Landwirte mit Schweinehaltungen, die bekannten Biosicherheitsmaßnahmen zum Schutz der Hausschweinebestände vor der ASP gerade jetzt ganz besonders zu beachten. Selbstverständlich sind auch die Hobbyhalter zu höchster Vorsicht aufgerufen.“</p>
+            <br>
+            <p>Der Kreis Olpe, das Landesamt für Verbraucherschutz und Ernährung Nordrhein-Westfalen (LAVE NRW) und das nordrhein-westfälische Ministerium für Landwirtschaft und Verbraucherschutz arbeiten dabei eng zusammen und stehen bereits seit Freitag in engem Kontakt. Die zuständigen Landesbehörden in den Bundesländern wurden informiert. Auch mit den zuständigen 
+                Bundesbehörden steht das Ministerium für Landwirtschaft für Verbraucherschutz im Austausch.</p>
+            <br>
+            <p>Für Schweine verläuft eine Infektion mit dem ASP-Virus fast immer tödlich. Für den Menschen und für andere Haus- und Nutztierarten ist die ASP dagegen ungefährlich. Die Übertragung erfolgt vor allem durch direkten Kontakt mit Kadavern infizierter Tiere sowie über indirekte Übertragungswege (Fahrzeuge, Jagdausrüstung, landwirtschaftliche Geräte, Kleidung). 
+                Eine Übertragung auf den Menschen ist aber nicht möglich.</p>
+            <br>
+            <p>Um den Fundort herum wird eine Restriktionszone eingerichtet. Die von der Restriktionszone betroffenen Veterinärbehörden der Kreise und kreisfreien Städte organisieren aktuell in Abstimmung mit dem Land NRW die Suche, Beprobung, Bergung und Entsorgung von tot aufgefundenem Wild. Die Krisenstrukturen der betroffenen Kreise sind aktiviert. Ein epidemiologisches 
+                Expertenteam des Bundesinstituts FLI wird die Veterinärbehörde des Kreises Olpe vor Ort unterstützen.</p>
+            <br>
+            <p class="text-black font-semibold text-lg">Hinweise an Landwirtschaft zur Beachtung von Biosicherheitsmaßnahmen</p>
+            <br>
+            <p>Wichtig ist der Schutz der eigenen Tiere, wie das Einzäunen der Stallanlagen inklusive der Bereiche, in denen Futter und Einstreu gelagert wird. Der Zutritt in die Stallungen soll nur über Hygieneschleusen erfolgen, in denen betriebseigene Schutzkleidung und -stiefel angezogen werden und das Waschen und Desinfizieren der Hände möglich sind. Weiterhin ist Personen- 
+                und Fahrzeugverkehr auf dem Betrieb zu begrenzen. Zudem besteht die Möglichkeit, an einem freiwilligen Früherkennungsprogramm teilzunehmen.</p>
+            <br>
+            <p class="text-black font-semibold text-lg">Vorsorgemaßnahmen im Vorfeld getroffen</p>
+            <br>
+            <p>Das Land Nordrhein-Westfalen hat bereits vielfältige Vorsorgemaßnahmen ergriffen, um einem Ausbruch der Tierseuche zu begegnen. Bereits 2019 hat es einen Rahmenvertrag mit einem privaten Dienstleister, der Wildtierseuchen-Vorsorge-Gesellschaft mbH (WSVG), abgeschlossen. Sie soll im Ausbruchsfall die betroffenen Kommunen unmittelbar unterstützen.</p>
+            <br>
+            <p class="text-black font-semibold text-lg">Tote Wildschweine melden</p>
+            <br>
+            <p>Das Landwirtschafts- und Verbraucherschutzministerium ruft dazu auf, Funde von toten Wildscheinen unmittelbar zu melden. Wer ein totes Wildschwein in NRW findet, wird gebeten, sich unter der Telefonnummer (0201) 714488 der Bereitschaftszentrale des Landesamtes für Verbraucherschutz und Ernährung (LAVE) zu melden. Sie kümmert sich in Abstimmung mit den 
+                Kommunen um die schnelle Sicherung und Untersuchung des Wildschweins.</p>
+            <br>
+            <p class="text-black font-semibold text-lg">Hintergrund zur Afrikanischen Schweinepest</p>
+            <br>
+            <p>Die ASP ist eine anzeigepflichtige Tierseuche, deren Vorkommen ursprünglich auf Afrika begrenzt war. Sie betrifft ausschließlich Haus- und Wildschweine. Nachdem die ASP 2007 nach Georgien eingeschleppt worden war und sich von dort in die Nachbarländer ausgebreitet hat, trat sie 2014 das erste Mal in den baltischen Staaten und Polen auf. 
+                In Deutschland wurde die ASP erstmals am 10. September 2020 in Brandenburg bei einem Wildschwein festgestellt. Vor einem Jahr war die Infektion erstmalig bei einem Wildschwein in Hessen nachgewiesen worden und hat sich seither auch im Länderdreieck zwischen Hessen, Rheinland-Pfalz und Baden-Württemberg in der Wildschweinpopulation ausgebreitet.</p>
+            <br>
+            <br>
+            <p>(Quelle: Ministerium für Landwirtschaft und Verbraucherschutz NRW)</p>
+        </div>
+                
+
+                     <footer class="fixed bottom-0 left-0 z-20 w-full p-4 font-bold bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">&copy; 2025 - S.W.       
+                </footer>
+            </section>
+        </section>
+        <section class="bg-cover h-[10vh]">
+        </section>
+        
+        <script src="../js/app.js"></script>
+</body>
+</html>
+                
+
+                     <footer class="fixed bottom-0 left-0 z-20 w-full p-4 font-bold bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">&copy; 2025 - S.W.       
+                </footer>
+            </section>
+        </section>
+        <section class="bg-cover h-[10vh]">
+        </section>
+        
+        <script src="../js/app.js"></script>
+</body>
+</html>

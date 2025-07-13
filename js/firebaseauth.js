@@ -1,4 +1,4 @@
- import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
  import {getAuth, sendPasswordResetEmail ,createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
  import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js"
  
@@ -111,3 +111,14 @@
     alert("Bitte gib deine Email ein!")
   });
 });
+
+async function handleLogout() {
+    try {
+        await firebase.auth().signOut();
+        window.location.href = 'login.html';
+    } catch (error) {
+        console.error('Fehler beim Abmelden:', error);
+    }
+}
+
+window.handleLogout = handleLogout;
