@@ -51,6 +51,9 @@
         <li>
             <a href="datenschutz.html" class="text-xl hover:text-green-500 transition-all duration-500">Datenschutz</a>
         </li>
+        <li>
+            <a href="agb.html" class="text-xl hover:text-green-500 transition-all duration-500">AGB</a>         
+        </li>
     </ul>
 </nav>
 
@@ -96,6 +99,24 @@
     <div class="mb-8">
         <textarea name="remark" rows="5" placeholder="Bemerkungen" 
                   class="input-modern min-h-[120px] resize-y"></textarea>
+    </div>
+
+        <div class="mb-6 text-center">
+        <label class="flex items-center justify-center space-x-3 text-gray-700 cursor-pointer">
+            <input type="checkbox" id="privacy-checkbox" name="privacy-consent" required 
+                   class="w-5 h-5 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2">
+            <span class="text-sm md:text-base">
+                Ich habe die 
+                <a href="datenschutz.html" target="_blank" class="text-green-600 hover:text-green-800 underline">
+                    Datenschutzerklärung
+                </a> 
+                und die
+                <a href="agb.html" target="_blank" class="text-green-600 hover:text-green-800 underline">
+                    AGB
+                </a>
+                gelesen und zur Kenntnis genommen
+            </span>
+        </label>
     </div>
 
     <!-- Submit Button -->
@@ -145,6 +166,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const kwInput = document.getElementById('currentKW');
     const weekNumber = getWeekNumber();
     kwInput.value = formatWeekNumber(weekNumber);
+});
+
+// Form validation - Button nur aktivieren wenn Datenschutz akzeptiert wurde
+document.addEventListener('DOMContentLoaded', () => {
+    const privacyCheckbox = document.getElementById('privacy-checkbox');
+    const submitButton = document.getElementById('submit');
+    
+    function updateSubmitButton() {
+        if (privacyCheckbox.checked) {
+            submitButton.disabled = false;
+            submitButton.classList.remove('opacity-50', 'cursor-not-allowed');
+        } else {
+            submitButton.disabled = true;
+            submitButton.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+    }
+// Initial state
+    updateSubmitButton();
+    
+// Event listener für Checkbox
+    privacyCheckbox.addEventListener('change', updateSubmitButton);
 });
 </script>
 

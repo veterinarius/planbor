@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Einwilligung & Nutzungsbedingungen</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    /* MODAL OVERLAY */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* MODAL BOX */
+    .modal-box {
+      background: white;
+      padding: 30px;
+      max-width: 800px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    .checkbox-container {
+      margin-top: 20px;
+    }
+
+    .accept-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .accept-button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MODAL OVERLAY -->
+  <div class="modal-overlay" id="consentModal">
+    <div class="modal-box">
+      <h1>📄 Einwilligung zur Datenverarbeitung & Nutzungsbedingungen</h1>
+
+      <h2>1. Verantwortlicher</h2>
+      <p><strong>[Firmenname oder Verantwortlicher]</strong><br>[Adresse]<br>[E-Mail-Adresse]</p>
+
+      <h2>2. Zweck der Datenerhebung</h2>
+      <ul>
+        <li><strong>Pflichtangaben:</strong> Vorname, Nachname, E-Mail-Adresse, Passwort</li>
+        <li><strong>Freiwillige Angaben:</strong> Dienstplan-Wünsche</li>
+      </ul>
+
+      <h2>3. Datenempfänger</h2>
+      <ul>
+        <li>Firebase (Google LLC)</li>
+        <li>Google Sheets (Google LLC)</li>
+      </ul>
+      <p>Datenverarbeitung kann in den USA erfolgen. Google ist nach dem EU-U.S. Data Privacy Framework zertifiziert.</p>
+
+      <h2>4.–7. Rechtsgrundlagen, Widerruf, Dauer, Rechte</h2>
+      <ul>
+        <li>Verarbeitung auf Basis von Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)</li>
+        <li>Widerruf jederzeit möglich</li>
+        <li>Datenlöschung bei Kontoauflösung</li>
+        <li>Rechte: Auskunft, Löschung, Einschränkung, Datenübertragbarkeit</li>
+      </ul>
+
+      <h2>8. Nutzungsbedingungen</h2>
+      <ul>
+        <li>Nur autorisierte Mitarbeitende dürfen die App nutzen.</li>
+        <li>Wahrheitsgemäße Angaben sind Pflicht.</li>
+        <li>Missbrauch führt zum Ausschluss.</li>
+      </ul>
+
+      <div class="checkbox-container">
+        <label>
+          <input type="checkbox" id="consentCheckbox">
+          Ich stimme der Datenverarbeitung und den Nutzungsbedingungen zu.
+        </label>
+      </div>
+
+      <button id="acceptButton" class="accept-button" disabled>Einverstanden</button>
+    </div>
+  </div>
+
+  <!-- INHALT DER APP (Wird erst sichtbar nach Zustimmung) -->
+  <div id="appContent" style="display:none; padding: 30px;">
+    <h2>Willkommen in der App!</h2>
+    <p>Die Inhalte sind jetzt freigeschaltet.</p>
+    <!-- Hier folgt dein App-Code -->
+  </div>
+
+  <script>
+    const checkbox = document.getElementById('consentCheckbox');
+    const button = document.getElementById('acceptButton');
+    const modal = document.getElementById('consentModal');
+    const appContent = document.getElementById('appContent');
+
+    checkbox.addEventListener('change', () => {
+      button.disabled = !checkbox.checked;
+    });
+
+    button.addEventListener('click', () => {
+      // Optional: Lokale Speicherung der Zustimmung
+      localStorage.setItem('datenschutzZustimmung', 'true');
+      modal.style.display = 'none';
+      appContent.style.display = 'block';
+    });
+
+    // Optional: Zustimmung speichern, sodass sie nur einmal angezeigt wird
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('datenschutzZustimmung') === 'true') {
+        modal.style.display = 'none';
+        appContent.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
