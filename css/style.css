@@ -105,6 +105,18 @@ body {
   transform: translateY(-1px);
 }
 
+.btn:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.input-group button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .btn:active {
   transform: translateY(0);
 }
