@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="../icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <title>Selbstversorgung</title>
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/newsstyle.css">
+    <link rel="manifest" href="./manifest.json">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<style>
+    #check:checked ~ ul {
+        left: 0;
+    }
+</style>
+
+<body>
+    <nav class="bg-gradient-to-r from-green-600 to-green-200 h-20 w-full sticky top-0 z-50">
+        <input type="checkbox" id="check" hidden>
+        <label for="check" class="float-right text-white text-3xl leading-[80px] mr-10 lg:hidden">
+            <ion-icon name="menu" onclick="Menu(this)"></ion-icon> </label>
+            <a href="../news.html" class="cursor-pointer text-white leading-[80px] pl-12 md:pl-2 md:text-4-xl text-3xl">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </a>
+        <ul class="float-right mr-10 lg:flex leading-[80px] space-x-4 text-white uppercase rounded fixed lg:relative h-[100vh] lg:h-0 w-[100%] lg:w-fit top-20 lg:top-0 left-[-100%] lg:left-0 transition-all duration-300 lg:transition-none text-center bg-gradient-to-r from-green-600 to-green-200">
+        <li>
+            <a href="../account.html" class="text-xl hover:text-green-500 transition-all duration-500">Account</a>
+        </li>
+        <li>
+            <a href="../news.html" class="text-xl hover:text-green-500 transition-all duration-500">Nachrichten</a>         
+        </li>
+       <!--<li>
+            <a href="../discord.html" class="text-xl hover:text-green-500 transition-all duration-500">Discord</a>
+        </li>-->
+        <li>
+            <a href="../download.html" class="text-xl hover:text-green-500 transition-all duration-500">Downloads</a>         
+        </li>
+        <li>
+            <a href="../impressum.html" class="text-xl hover:text-green-500 transition-all duration-500">Impressum</a>         
+        </li>
+        <li>
+            <a href="../datenschutz.html" class="text-xl hover:text-green-500 transition-all duration-500">Datenschutz</a>         
+        </li>
+        <li>
+            <a href="../agb.html" class="text-xl hover:text-green-500 transition-all duration-500">AGB</a>         
+        </li>
+    </ul>
+</nav>
+
+<script>
+    function Menu(e){
+        let list = document.querySelector('ul');
+
+        e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) : (e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+    }
+</script>
+
+        <section class="group md:flex items-center justify-center max-h-full p-10">
+            <section class="input_info w-68 flex flex-col space-y-10">
+                <!--<img class="drop-shadow-lg mt-10 mx-auto" src="/app/logo.png" alt="Logo">-->
+                
+                <div>
+                <p class="article_headline">Der Selbstversorgungsgrad: Wie ist es um die Versorgung mit Lebensmitteln in Deutschland bestellt?</span>
+                </p>
+            </div>
+
+            <div class="article">
+            <p class="text-black font-semibold text-lg">Globalisierte Märkte sind längst Alltag – auch bei Nahrungsmitteln. Erst in Krisenzeiten rückt die Abhängigkeit von Importen wieder in den Fokus.</p>
+            <br>
+            <br>
+            <p>Bonn (ble) – Der Selbstversorgungsgrad zeigt an, in welchem Umfang die Erzeugung der heimischen Landwirtschaft den Bedarf, also den Gesamtverbrauch, decken kann. In Deutschland lag der Selbstversorgungsgrad mit Nahrungsmitteln im Durchschnitt der vergangenen zehn Jahre bei rund 84%. Betrachtet man einzelne Erzeugnisse, zeigt sich eine enorme Bandbreite: 
+                Während Obst und Gemüse zum überwiegenden Teil importiert werden müssen, erzeugt die deutsche Landwirtschaft deutlich mehr Zucker und Kartoffeln als zur Deckung der Nachfrage in Deutschland erforderlich wäre. 
+                Bei Fleisch lag der Selbstversorgungsgrad über alle Fleischarten und Teilstücke hinweg bei 120%. Bei gefragten Teilstücken, wie Filet oder Kotelett, muss der Bedarf dennoch durch Importe gedeckt werden. Füße, Schwänze oder andere Teilstücke hingegen finden auf dem deutschen Markt kaum Absatz und werden zu Tierfutter weiterverarbeitet oder ins Ausland exportiert.
+            </p>
+            <br>
+            <p>Eine Landwirtin beziehungsweise ein Landwirt ernährt in Deutschland 153 Menschen  – mehr als doppelt so viele wie noch 1990. Eine imposante Zahl und doch nicht genug, um die Bevölkerung allein mit Lebensmitteln aus heimischer Erzeugung ausreichend versorgen zu können. Denn der Selbstversorgungsgrad mit Lebensmitteln lag 2023/24 hierzulande bei lediglich 84 Prozent, 
+                im Durchschnitt der vergangenen zehn Jahre bei rund 85 Prozent.</p>
+            <br>
+            <p>Dass sich manche Bedarfe nur durch Importe decken lassen, ist in Zeiten globaler Handelsströme längst Normalität geworden und wird kaum hinterfragt. Erst durch die Corona-Krise und den Ukraine-Krieg wurde das Augenmerk wieder vermehrt auf die Frage gelenkt, welche Abhängigkeiten von Zulieferern bestehen, 
+                wie krisenfest unsere Lieferketten sind und in welchem Ausmaß wir uns im Notfall auch selbst versorgen könnten. Die beruhigende Botschaft: Die Lebensmittelversorgung in Deutschland ist gesichert.</p>
+            <br>
+            <p>Trotzdem interessant, einmal genauer hinzusehen, in welchem Ausmaß Lebensmittel in Deutschland erzeugt, exportiert und importiert werden. Denn ein Selbstversorgungsgrad von 84 Prozent ist letztlich nur ein rechnerischer Durchschnittswert.</p>
+            <br>
+            <p>Betrachtet man einzelne Erzeugnisse, zeigt sich schnell eine enorme Bandbreite: manches produzieren wir im Überfluss, anderes müssen wir im großen Stil importieren, um den Bedarf zu decken.</p>
+            <br>
+            <p class="text-black font-semibold text-lg">Getreide</p>
+            <br>
+            <p>Bei Getreide etwa liegt der Selbstversorgungsgrad bei 100 Prozent, bei Weizen (Hart- und Weichweizen) sind es 102 Prozent. Weizen ist flächenmäßig die mit Abstand wichtigste Anbaukultur in Deutschland. Auf fast 3 Millionen Hektar wird hierzulande Weizen angebaut. Das ist mehr als ein Viertel der gesamten Ackerfläche.</p>
+            <br>
+            <p>In Deutschland wächst jedoch vor allem Weichweizen, der zum Backen von Broten, Brötchen und süßen Backwaren verwendet wird. Hier liegt der Selbstversorgungsgrad bei 108 Prozent. Hartweizen, aus dem Teigwaren wie Nudeln, aber auch Bulgur und Couscous hergestellt werden, 
+                muss angesichts eines Selbstversorgungsgrads von 22 Prozent importiert werden.</p>
+            <br>
+            <p class="text-black font-semibold text-lg">Sonnenblumenöl</p>
+            <br>
+            <p>Das gilt auch für Sonnenblumenöl. Hier liegt der deutsche Selbstversorgungsgrad sogar bei lediglich zehn Prozent (Stand: 2024). Wichtigster Exporteur ist die Ukraine, auf die 37 Prozent der weltweiten Exportmenge und 38 Prozent der deutschen Importe entfallen.</p>
+            <br>
+            <p class="text-black font-semibold text-lg">Schweinefleisch</p>
+            <br>
+            <p>Beim Schweinefleisch hingegen gehört Deutschland zu den wichtigsten Exporteuren. Hier zeigt sich aber auch exemplarisch wie komplex die globalen Handelsströme sind. Denn trotz eines Selbstversorgungsgrads von 135 Prozent importiert Deutschland große Mengen Schweinefleisch: 2024 rund 942.000 Tonnen. 
+                Demgegenüber stehen Exporte von über 2,2 Millionen Tonnen. 
+                Was widersinnig anmutet, ist auf einem freien Markt üblich und wird vor allem von Preis und Nachfrage bestimmt.</p>
+            <br>
+            <p>Das Konsumverhalten spielt verglichen damit nur eine untergeordnete Rolle. Auch wenn hierzulande hauptsächlich Edelteile nachgefragt und Schweinefüße, -schnauzen und -schwänze sowie die Innereien als Delikatessen in asiatische Länder exportiert werden, entfällt der größte Teil der Ex- und Importe auf europäische Handelspartner.</p>
+            <br>
+             <p class="text-black font-semibold text-lg">Kartoffeln</p>
+            <br>
+            <p>Noch größer als bei Getreide und Schweinefleisch fällt der Überschuss aus heimischer Erzeugung bei Kartoffeln aus. Hier liegt der Selbstversorgungsgrad bei 145 Prozent. Deutschland ist nicht nur der flächen- und mengenmäßig größte Kartoffelerzeuger in der EU, sondern auch weltweit drittgrößter Exporteur von Kartoffeln.</p>
+            <br>
+            <p class="text-black font-semibold text-lg">Obst</p>
+            <br>
+            <p>Bei Obst und Gemüse sieht das ganz anders aus. Nur gut ein Sechstel des Bedarfs an Obst kann aus heimischem Anbau gedeckt werden. Und das liegt keineswegs nur daran, dass Orangen, Bananen und Mangos hierzulande nicht wachsen. Auch bei den wichtigsten heimischen Obstarten kann bestenfalls rund die Hälfte des Bedarfs aus eigener Erzeugung gedeckt werden. So lag der Selbstversorgungsgrad im Wirtschaftsjahr 2024/25 für
+
+Äpfel bei 44 Prozent,
+Erdbeeren bei 38 Prozent,
+Pflaumen bei 49 Prozent und
+Kirschen bei 22 Prozent.</p>
+            <br>
+            <p class="text-black font-semibold text-lg">Gemüse</p>
+            <br>
+            <p>Auch Gemüse wird – angesichts eines Selbstversorgungsgrads von 40 Prozent – zum Großteil importiert. Lediglich bei Weißkohl und Rotkohl übertrifft die Erzeugung den Bedarf.
+Bei Spargel, der flächenmäßig wichtigsten Gemüseanbau-Kultur in Deutschland, wird ein Selbstversorgungsgrad von 75 Prozent erreicht, bei Speisezwiebeln sind es 73 Prozent, bei Möhren 79 Prozent.
+Das mit Abstand beliebteste Gemüse der Deutschen, die Tomate, stammt rechnerisch nur zu knapp fünf Prozent aus heimischer Erzeugung.
+</p>
+            <br>
+            <p>Salopp gesagt: für Brot, Schnitzel und Pommes ist hierzulande gesorgt. Für fast alle Gemüsebeilagen sowie den Obstsalat zum Nachtisch sind wir hingegen auf Importe angewiesen.</p>
+            <br>
+            <p>(Quelle: ble)</p>
+        </div>
+            </section>
+        </section>
+        <section class="bg-cover h-[10vh]">
+        </section>
+        
+        <script src="../js/app.js"></script>
+</body>
+</html>
+                
+
+                     <footer class="fixed bottom-0 left-0 z-20 w-full p-4 font-bold bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">&copy; 2026 - S.W.       
+                </footer>
+            </section>
+        </section>
+        <section class="bg-cover h-[10vh]">
+        </section>
+        
+        <script src="../js/app.js"></script>
+</body>
+</html>

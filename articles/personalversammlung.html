@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" href="../icons/icon-96x96.png">
+  <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+  <title>Einladung zur Personalversammlung – 14.04.2026</title>
+  <link rel="shortcut icon" type="image/png" href="logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/newsstyle.css">
+  <link rel="manifest" href="./manifest.json">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8f9fa;
+      --ink: #111111;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --border: #e5e7eb;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--surface);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    .page {
+      background: var(--bg);
+      max-width: 640px;
+      width: 100%;
+      padding: 3rem 3.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.08);
+      animation: fadeIn 0.5s ease both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      padding: 0.2rem 0.55rem;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .chip {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.3rem 0.75rem;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* Body text */
+    .salutation {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .intro {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    /* Agenda */
+    .agenda-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    .agenda {
+      list-style: none;
+      counter-reset: agenda;
+    }
+
+    .agenda > li {
+      counter-increment: agenda;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .agenda > li:last-child { border-bottom: none; }
+
+    .agenda > li::before {
+      content: counter(agenda, decimal-leading-zero);
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      width: 1.8rem;
+      margin-top: 0.15rem;
+      letter-spacing: 0.03em;
+    }
+
+    .agenda-text { flex: 1; }
+
+    .sub-info {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Footer */
+    .footer-note {
+      margin-top: 0;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .highlight-box {
+      background: #eff6ff;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      padding: 0.85rem 1.1rem;
+      margin-top: 1.5rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 2rem 1.5rem; }
+    }
+  </style>
+  <style>
+    #check:checked ~ ul { left: 0; }
+  </style>
+</head>
+<body>
+
+  <nav class="bg-gradient-to-r from-green-600 to-green-200 h-20 w-full sticky top-0 z-50">
+    <input type="checkbox" id="check" hidden>
+    <label for="check" class="float-right text-white text-3xl leading-[80px] mr-10 lg:hidden">
+      <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+    </label>
+    <a href="../news.html" class="cursor-pointer text-white leading-[80px] pl-12 md:pl-2 md:text-4-xl text-3xl">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </a>
+    <ul class="float-right mr-10 lg:flex leading-[80px] space-x-4 text-white uppercase rounded fixed lg:relative h-[100vh] lg:h-0 w-[100%] lg:w-fit top-20 lg:top-0 left-[-100%] lg:left-0 transition-all duration-300 lg:transition-none text-center bg-gradient-to-r from-green-600 to-green-200">
+      <li><a href="../account.html" class="text-xl hover:text-green-500 transition-all duration-500">Account</a></li>
+      <li><a href="../news.html" class="text-xl hover:text-green-500 transition-all duration-500">Nachrichten</a></li>
+      <li><a href="../download.html" class="text-xl hover:text-green-500 transition-all duration-500">Downloads</a></li>
+      <li><a href="../impressum.html" class="text-xl hover:text-green-500 transition-all duration-500">Impressum</a></li>
+      <li><a href="../datenschutz.html" class="text-xl hover:text-green-500 transition-all duration-500">Datenschutz</a></li>
+      <li><a href="../agb.html" class="text-xl hover:text-green-500 transition-all duration-500">AGB</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    function Menu(e) {
+      let list = document.querySelector('ul');
+      e.name === 'menu'
+        ? (e.name = 'close', list.classList.add('top-[80px]'), list.classList.add('opacity-100'))
+        : (e.name = 'menu', list.classList.remove('top-[80px]'), list.classList.remove('opacity-100'));
+    }
+  </script>
+
+  <div class="main-content">
+  <div class="page">
+
+    <header>
+      <p class="badge">Personalrat · Kreis Borken</p>
+      <h1>Einladung zur<br>Personalversammlung</h1>
+      <div class="meta">
+        <span class="chip">Dienstag, 14. April 2026</span>
+        <span class="chip">14:00 Uhr</span>
+        <span class="chip">Vennehof Borken</span>
+      </div>
+    </header>
+
+    <hr class="divider">
+
+    <p class="salutation">Liebe Kolleginnen und Kollegen,</p>
+    <p class="intro">
+      der Personalrat lädt herzlich zur Personalversammlung in den Vennehof Borken ein. Wir möchten über aktuelle Themen informieren, aber auch Rückschau halten über Ereignisse des abgelaufenen Jahres. Wir freuen uns auf viele interessierte Kolleginnen und Kollegen und demzufolge auf ein volles Haus. Selbstverständlich werden auch gerne Wortmeldungen aus der Versammlung beantwortet.
+    </p>
+
+    <hr class="divider">
+
+    <p class="agenda-title">Tagesordnung</p>
+
+    <ul class="agenda">
+      <li><span class="agenda-text">Begrüßung</span></li>
+      <li><span class="agenda-text">Ehrung der Verstorbenen</span></li>
+      <li><span class="agenda-text">Grußwort des Landrates</span></li>
+      <li><span class="agenda-text">Geschäftsbericht des Personalrates</span></li>
+      <li><span class="agenda-text">Grußwort der Gewerkschaften</span></li>
+      <li>
+        <span class="agenda-text">
+          Das Mitarbeitendengespräch – Neuerungen
+          <span class="sub-info">Gespräch mit Petra Cordes u. Sarah Lake</span>
+        </span>
+      </li>
+      <li>
+        <span class="agenda-text">
+          Die Neue Nebenstelle des Fachbereichs Jugend u. Familie in Stadtlohn
+          <span class="sub-info">Interview mit Brigitte Watermeier u. Isabel Rusche</span>
+        </span>
+      </li>
+      <li>
+        <span class="agenda-text">
+          Brandvorfall im Kreishaus im letzten Jahr – Nachbetrachtung u. Erkenntnisse
+          <span class="sub-info">Gespräch mit Matthias Hanne u. Peter Sonntag</span>
+        </span>
+      </li>
+      <li>
+        <span class="agenda-text">
+          Umsetzung der Neuregelungen aus dem Tarifvertrag 2025
+          <span class="sub-info">Infos von Christiane Espeter</span>
+        </span>
+      </li>
+      <li>
+        <span class="agenda-text">
+          Was ich schon immer mal wissen wollte …
+          <span class="sub-info">Fragen an die Verwaltungsleitung</span>
+        </span>
+      </li>
+      <li><span class="agenda-text">Wie geht es mit unserem Betriebsfest weiter?</span></li>
+      <li><span class="agenda-text">Schlussworte</span></li>
+    </ul>
+
+    <hr class="divider">
+
+    <p class="footer-note">
+      Im Anschluss an die Versammlung laden wir euch noch zu Kaffee, Kuchen, Schnittchen und Kaltgetränken im Foyer der Stadthalle ein.
+    </p>
+
+    <div class="highlight-box">
+      Die Teilnahme an der Personalversammlung ist Arbeitszeit.
+    </div>
+
+  </div>
+  </div>
+</body>
+</html>
