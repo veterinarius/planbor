@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" href="../icons/icon-96x96.png">
+  <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+  <title>Protokoll Dienstbesprechung USt-Schöppingen – 20.05.2026</title>
+  <link rel="shortcut icon" type="image/png" href="logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/newsstyle.css">
+  <link rel="manifest" href="./manifest.json">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8f9fa;
+      --ink: #111111;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --border: #e5e7eb;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--surface);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    .page {
+      background: var(--bg);
+      max-width: 800px;
+      width: 100%;
+      padding: 3rem 3.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.08);
+      animation: fadeIn 0.5s ease both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    header { margin-bottom: 2.5rem; }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      padding: 0.2rem 0.55rem;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .chip {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.3rem 0.75rem;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    .pdf-wrapper {
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .pdf-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 80vh;
+      border: none;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .download-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .pdf-js-viewer { display: none; flex-direction: column; }
+
+    .pdf-js-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1rem;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    .pdf-js-controls button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: none;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .pdf-js-controls button:disabled { opacity: 0.35; cursor: default; }
+    .pdf-js-controls button:not(:disabled):hover { background: var(--accent); color: #fff; }
+
+    .pdf-page-info { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
+
+    #pdfCanvas { display: block; width: 100%; height: auto; }
+
+    .pdf-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .page { padding: 2rem 1.25rem; }
+      .pdf-wrapper iframe { display: none; }
+      .pdf-js-viewer { display: flex; }
+    }
+  </style>
+  <style>
+    #check:checked ~ ul { left: 0; }
+  </style>
+</head>
+<body>
+
+  <nav class="bg-gradient-to-r from-green-600 to-green-200 h-20 w-full sticky top-0 z-50">
+    <input type="checkbox" id="check" hidden>
+    <label for="check" class="float-right text-white text-3xl leading-[80px] mr-10 lg:hidden">
+      <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+    </label>
+    <a href="../news.html" class="cursor-pointer text-white leading-[80px] pl-12 md:pl-2 md:text-4-xl text-3xl">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </a>
+    <ul class="float-right mr-10 lg:flex leading-[80px] space-x-4 text-white uppercase rounded fixed lg:relative h-[100vh] lg:h-0 w-[100%] lg:w-fit top-20 lg:top-0 left-[-100%] lg:left-0 transition-all duration-300 lg:transition-none text-center bg-gradient-to-r from-green-600 to-green-200">
+      <li><a href="../account.html" class="text-xl hover:text-green-500 transition-all duration-500">Account</a></li>
+      <li><a href="../news.html" class="text-xl hover:text-green-500 transition-all duration-500">Nachrichten</a></li>
+      <li><a href="../download.html" class="text-xl hover:text-green-500 transition-all duration-500">Downloads</a></li>
+      <li><a href="../impressum.html" class="text-xl hover:text-green-500 transition-all duration-500">Impressum</a></li>
+      <li><a href="../datenschutz.html" class="text-xl hover:text-green-500 transition-all duration-500">Datenschutz</a></li>
+      <li><a href="../agb.html" class="text-xl hover:text-green-500 transition-all duration-500">AGB</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    function Menu(e) {
+      let list = document.querySelector('ul');
+      e.name === 'menu'
+        ? (e.name = 'close', list.classList.add('top-[80px]'), list.classList.add('opacity-100'))
+        : (e.name = 'menu', list.classList.remove('top-[80px]'), list.classList.remove('opacity-100'));
+    }
+  </script>
+
+  <script>
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      const s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+      s.onload = initPDF;
+      document.head.appendChild(s);
+    }
+
+    let pdfDoc = null, pageNum = 1, rendering = false, pending = null;
+
+    function initPDF() {
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      pdfjsLib.getDocument('../pdfs/protokoll.pdf').promise.then(pdf => {
+        pdfDoc = pdf;
+        document.getElementById('pdfLoading').style.display = 'none';
+        document.getElementById('pdfCanvas').style.display = 'block';
+        updateControls();
+        renderPage(1);
+      }).catch(() => {
+        document.getElementById('pdfLoading').innerHTML =
+          '<ion-icon name="alert-circle-outline"></ion-icon>&nbsp;Fehler beim Laden des PDFs.';
+      });
+    }
+
+    function renderPage(num) {
+      rendering = true;
+      const canvas = document.getElementById('pdfCanvas');
+      const ctx = canvas.getContext('2d');
+      pdfDoc.getPage(num).then(page => {
+        const dpr = window.devicePixelRatio || 1;
+        const cssWidth = canvas.offsetWidth;
+        const scale = (cssWidth / page.getViewport({ scale: 1 }).width) * dpr;
+        const vp = page.getViewport({ scale });
+        canvas.width = vp.width;
+        canvas.height = vp.height;
+        canvas.style.width = cssWidth + 'px';
+        canvas.style.height = (vp.height / dpr) + 'px';
+        page.render({ canvasContext: ctx, viewport: vp }).promise.then(() => {
+          rendering = false;
+          if (pending !== null) { renderPage(pending); pending = null; }
+          updateControls();
+        });
+      });
+      document.getElementById('pdfPageInfo').textContent = `${num} / ${pdfDoc.numPages}`;
+    }
+
+    function changePage(delta) {
+      const next = pageNum + delta;
+      if (next < 1 || next > pdfDoc.numPages) return;
+      pageNum = next;
+      rendering ? (pending = pageNum) : renderPage(pageNum);
+    }
+
+    function updateControls() {
+      document.getElementById('pdfPrev').disabled = pageNum <= 1;
+      document.getElementById('pdfNext').disabled = pageNum >= pdfDoc.numPages;
+    }
+  </script>
+
+  <div class="main-content">
+  <div class="page">
+
+    <header>
+      <!--<p class="badge">USt-Schöppingen</p>-->
+      <h1>Protokoll Dienstbesprechung</h1>
+      <div class="meta">
+        <span class="chip">20. Mai 2026</span>
+        <span class="chip">Akzenthotel Tietmeyer</span>
+        <span class="chip">amtliche Fachassistenten</span>
+      </div>
+    </header>
+
+    <hr class="divider">
+
+    <div class="pdf-wrapper">
+      <iframe
+        src="../pdfs/protokoll.pdf"
+        title="Protokoll Dienstbesprechung USt-Schöppingen 20.05.2026">
+      </iframe>
+      <div class="pdf-js-viewer" id="pdfJsViewer">
+        <div class="pdf-loading" id="pdfLoading">
+          <ion-icon name="hourglass-outline"></ion-icon> PDF wird geladen…
+        </div>
+        <canvas id="pdfCanvas" style="display:none;"></canvas>
+        <div class="pdf-js-controls">
+          <button id="pdfPrev" onclick="changePage(-1)" disabled>
+            <ion-icon name="chevron-back-outline"></ion-icon> Zurück
+          </button>
+          <span class="pdf-page-info" id="pdfPageInfo">– / –</span>
+          <button id="pdfNext" onclick="changePage(1)" disabled>
+            Weiter <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--<a href="../pdfs/protokoll.pdf" download class="download-btn">
+      ↓ PDF herunterladen
+    </a>-->
+
+  </div>
+  </div>
+</body>
+</html>

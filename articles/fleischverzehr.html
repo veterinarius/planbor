@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" href="../icons/icon-96x96.png">
   <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
-  <title>Einladung zur Personalversammlung – 14.04.2026</title>
+  <title>Fleischverzehr steigt – Gefügelfleisch auf Rekordniveau</title>
   <link rel="shortcut icon" type="image/png" href="logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../css/newsstyle.css">
@@ -35,12 +35,12 @@
     .main-content {
       display: flex;
       justify-content: center;
-      padding: 3rem 1rem;
+      padding: 3rem 1rem 5rem;
     }
 
     .page {
       background: var(--bg);
-      max-width: 640px;
+      max-width: 800px;
       width: 100%;
       padding: 3rem 3.5rem;
       border-radius: 8px;
@@ -53,10 +53,7 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* Header */
-    header {
-      margin-bottom: 2.5rem;
-    }
+    header { margin-bottom: 2.5rem; }
 
     .badge {
       display: inline-block;
@@ -102,91 +99,86 @@
       margin: 2rem 0;
     }
 
-    /* Body text */
-    .salutation {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .intro {
-      font-size: 0.93rem;
+    .article-body p {
+      font-size: 0.97rem;
       line-height: 1.75;
-      font-weight: 400;
+      color: #374151;
+      margin-bottom: 1.25rem;
+    }
+
+    .table-section { margin-top: 2.5rem; }
+
+    .table-title {
+      font-size: 1.05rem;
+      font-weight: 700;
       color: var(--ink);
+      margin-bottom: 0.3rem;
     }
 
-    /* Agenda */
-    .agenda-title {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1rem;
-      margin-top: 2rem;
-    }
-
-    .agenda {
-      list-style: none;
-      counter-reset: agenda;
-    }
-
-    .agenda > li {
-      counter-increment: agenda;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.92rem;
-      line-height: 1.5;
-    }
-
-    .agenda > li:last-child { border-bottom: none; }
-
-    .agenda > li::before {
-      content: counter(agenda, decimal-leading-zero);
-      flex-shrink: 0;
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--accent);
-      width: 1.8rem;
-      margin-top: 0.15rem;
-      letter-spacing: 0.03em;
-    }
-
-    .agenda-text { flex: 1; }
-
-    .sub-info {
-      display: block;
+    .table-subtitle {
       font-size: 0.8rem;
       color: var(--muted);
-      margin-top: 0.2rem;
+      font-style: italic;
+      margin-bottom: 1rem;
     }
 
-    /* Footer */
-    .footer-note {
-      margin-top: 0;
-      font-size: 0.88rem;
-      line-height: 1.7;
-      color: var(--muted);
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 6px;
+      border: 1px solid var(--border);
     }
 
-    .highlight-box {
-      background: #eff6ff;
-      border-left: 3px solid var(--accent);
-      border-radius: 0 4px 4px 0;
-      padding: 0.85rem 1.1rem;
-      margin-top: 1.5rem;
+    table {
+      width: 100%;
+      border-collapse: collapse;
       font-size: 0.88rem;
+    }
+
+    thead tr {
+      background-color: #2d6a4f;
+      color: #ffffff;
+    }
+
+    thead th {
+      padding: 0.65rem 1rem;
+      text-align: center;
       font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    thead th:first-child { text-align: left; }
+
+    tbody tr:nth-child(even) { background-color: #f0faf4; }
+    tbody tr:nth-child(odd)  { background-color: #ffffff; }
+
+    tbody td {
+      padding: 0.6rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      color: #374151;
+    }
+
+    tbody td:first-child {
+      text-align: left;
+      font-weight: 500;
       color: var(--ink);
     }
 
-    @media (max-width: 600px) {
-      .page { padding: 2rem 1.5rem; }
+    tbody tr:last-child td {
+      font-weight: 700;
+      color: var(--ink);
+      border-bottom: none;
+    }
+
+    .table-source {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+      .page { padding: 2rem 1.25rem; }
     }
   </style>
   <style>
@@ -226,77 +218,85 @@
   <div class="page">
 
     <header>
-      <p class="badge">Personalrat · Kreis Borken</p>
-      <h1>Einladung zur<br>Personalversammlung</h1>
-      <div class="meta">
-        <span class="chip">Dienstag, 14. April 2026</span>
-        <span class="chip">14:00 Uhr</span>
-        <span class="chip">Vennehof Borken</span>
-      </div>
+      <h1>Fleischverzehr steigt – Gefügelfleisch auf Rekordniveau</h1>
+      <!--<div class="meta">
+        <span class="chip">2025</span>
+        <span class="chip">BZL</span>
+        <span class="chip">vorläufig</span>
+      </div>-->
     </header>
 
     <hr class="divider">
 
-    <p class="salutation">Liebe Kolleginnen und Kollegen,</p>
-    <p class="intro">
-      der Personalrat lädt herzlich zur Personalversammlung in den Vennehof Borken ein. Wir möchten über aktuelle Themen informieren, aber auch Rückschau halten über Ereignisse des abgelaufenen Jahres. Wir freuen uns auf viele interessierte Kolleginnen und Kollegen und demzufolge auf ein volles Haus. Selbstverständlich werden auch gerne Wortmeldungen aus der Versammlung beantwortet.
-    </p>
+    <div class="article-body">
+      <p>Nach vorläufigen Berechnungen des Bundesinformationszentrums Landwirtschaft (BZL) lag der Fleischverzehr in Deutschland 2025 bei 54,9 kg pro Person und damit 1,4 kg über dem des Vorjahres. Haupttreiber war der gestiegene Gefügelfleischverzehr, der mit 14,7 kg pro Person einen Höchststand erreichte.</p>
 
-    <hr class="divider">
+      <p>Am meisten verzehrt wurde weiterhin Schweinefleisch mit 28,3 kg pro Person, gefolgt von Rind- und Kalbfleisch mit 9,7 kg. Insgesamt stieg der Fleischverzehr damit das dritte Jahr in Folge, blieb jedoch weiterhin unter dem Niveau früherer Jahre.</p>
 
-    <p class="agenda-title">Tagesordnung</p>
+      <p>Die Fleischproduktion im Inland sank 2025 leicht um 0,3 Prozent auf 7,3 Mio. t. Während die Erzeugung von Rind- und Kalbfleisch deutlich zurückging und auch die Gefügelfleischproduktion leicht unter dem Vorjahreswert blieb, nahm die Schweinefleischerzeugung zu. Zur Deckung des höheren Verbrauchs stiegen die Importe von Fleisch, fleischhaltigen Produkten und Innereien um fast 11 Prozent auf rund 3,6 Mio. t. Trotz weiterhin hoher Eigenerzeugung sank der Selbstversorgungsgrad auf 114,6 Prozent. Bei Rindfleisch wurde erstmals die Marke von 100 Prozent unterschritten, bei Gefügelfleisch lag sie ebenfalls darunter. Schweinefleisch wies mit knapp 139 Prozent weiterhin den höchsten Selbstversorgungsgrad auf.</p>
+    </div>
 
-    <ul class="agenda">
-      <li><span class="agenda-text">Begrüßung</span></li>
-      <li><span class="agenda-text">Ehrung der Verstorbenen</span></li>
-      <li><span class="agenda-text">Grußwort des Landrates</span></li>
-      <li><span class="agenda-text">Geschäftsbericht des Personalrates</span></li>
-      <li><span class="agenda-text">Grußwort der Gewerkschaften</span></li>
-      <li>
-        <span class="agenda-text">
-          Das Mitarbeitendengespräch – Neuerungen
-          <span class="sub-info">Gespräch mit Petra Cordes u. Sarah Lake</span>
-        </span>
-      </li>
-      <li>
-        <span class="agenda-text">
-          Die Neue Nebenstelle des Fachbereichs Jugend u. Familie in Stadtlohn
-          <span class="sub-info">Interview mit Brigitte Watermeier u. Isabel Rusche</span>
-        </span>
-      </li>
-      <li>
-        <span class="agenda-text">
-          Brandvorfall im Kreishaus im letzten Jahr – Nachbetrachtung u. Erkenntnisse
-          <span class="sub-info">Gespräch mit Matthias Hanne u. Peter Sonntag</span>
-        </span>
-      </li>
-      <li>
-        <span class="agenda-text">
-          Umsetzung der Neuregelungen aus dem Tarifvertrag 2025
-          <span class="sub-info">Infos von Christiane Espeter</span>
-        </span>
-      </li>
-      <li>
-        <span class="agenda-text">
-          Was ich schon immer mal wissen wollte …
-          <span class="sub-info">Fragen an die Verwaltungsleitung</span>
-        </span>
-      </li>
-      <li><span class="agenda-text">Wie geht es mit unserem Betriebsfest weiter?</span></li>
-      <li><span class="agenda-text">Schlussworte</span></li>
-    </ul>
-
-    <hr class="divider">
-
-    <p class="footer-note">
-      Im Anschluss an die Versammlung laden wir euch noch zu Kaffee, Kuchen, Schnittchen und Kaltgetränken im Foyer der Stadthalle ein.
-    </p>
-
-    <div class="highlight-box">
-      Die Teilnahme an der Personalversammlung ist Arbeitszeit.
+    <div class="table-section">
+      <p class="table-title">Wie viel Fleisch essen die Menschen in Deutschland pro Jahr?</p>
+      <p class="table-subtitle">in Kilogramm Schlachtgewicht pro Kopf</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>2020</th>
+              <th>2021</th>
+              <th>2022</th>
+              <th>2023</th>
+              <th>2024</th>
+              <th>2025*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Schwein</td>
+              <td>30,8</td>
+              <td>31,0</td>
+              <td>28,5</td>
+              <td>28,5</td>
+              <td>28,2</td>
+              <td>28,3</td>
+            </tr>
+            <tr>
+              <td>Geflügel</td>
+              <td>13,7</td>
+              <td>13,5</td>
+              <td>12,4</td>
+              <td>13,1</td>
+              <td>13,7</td>
+              <td>14,7</td>
+            </tr>
+            <tr>
+              <td>Rind</td>
+              <td>10,8</td>
+              <td>10,3</td>
+              <td>9,6</td>
+              <td>9,3</td>
+              <td>9,5</td>
+              <td>9,7</td>
+            </tr>
+            <tr>
+              <td>Fleisch gesamt</td>
+              <td>57,8</td>
+              <td>57,2</td>
+              <td>52,8</td>
+              <td>52,9</td>
+              <td>53,5</td>
+              <td>54,9</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-source">Bundesinformationszentrum Landwirtschaft | Quelle: © 2026 BLE | * vorläufig</p>
     </div>
 
   </div>
   </div>
+
 </body>
 </html>
