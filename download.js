@@ -65,6 +65,15 @@ const pdfDocuments = [
         uploadDate: "2025-02-13",
         category: "Belehrung",
         url: "/pdfs/BestaetigungBelehrungInfektionsschutzgesetz.pdf"
+    },
+    {
+        title: "Teilschaden",
+        description: "Teilschaden",
+        fileName: "Teilschaden.pdf",
+        fileSize: "202 KB",
+        uploadDate: "2026-09-22",
+        category: "Hilfe",
+        url: "/pdfs/Teilschaden.pdf"
     }, // Fügen Sie hier weitere Dokumente hinzu
 ];
 
